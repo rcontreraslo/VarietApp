@@ -1,0 +1,57 @@
+/* //////////////////   MENU principal Dropdown */
+.children {
+    background: #fff;
+}
+
+.children a,
+.children .separator {
+    display: block;
+    margin: 5px 0px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color:#333;
+}
+
+.children .separator {
+    border-top-width: 2px;
+}
+
+.children a:hover {
+    color: #818cf8;
+}
+
+@media (min-width: 768px) {
+    .children {
+        position: absolute;
+        width: 155px;
+        top: 70px;
+    }
+}
+
+
+
+/* //////////////////   DATATABLES modificacions */
+.dataTables_wrapper{
+    padding:1em;
+}
+.dataTables_length{
+    /*width: 52px;*/
+}
+/* /////////////////////////////////SELECT DATATABLE el icono  /////////////////////////  */
+ select {   
+    background-position: left 1.9rem center;
+    width: 52px;
+}
+.dt-buttons{
+    margin-left: 10px;
+}
+.form-label{font-weight:bold;}
+
+/* //////////////////////////////////////// MISSATGE EMERGENT/////////////////////////////////////// */
+.alertfix {
+    position: fixed;
+    top:8%;
+}
+.dataTables_info{
+    margin-bottom: 10px;
+}
