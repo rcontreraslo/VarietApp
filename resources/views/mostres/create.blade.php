@@ -41,7 +41,7 @@
                         @csrf
                         <div class="row">
                             <div class="col">
-                              <div class="row gx-3">
+                              <div class="row gx-3 mb-4">
 
                                 <div class="col-3 ">
                                   <label for="name" class="form-label">Nom</label>
@@ -71,7 +71,7 @@
                                   </select>
                                 </div>
                               </div>
-                              <div class="row gx-3">
+                              <div class="row gx-3 mb-4">
                                 <div class="col-3 ">
                                   <label for="mosAny" class="form-label">Any</label>
                                   <input type="number" class="form-control" id="mosAny" name="mosAny" placeholder="" value="" required>
@@ -91,14 +91,14 @@
                                   <input type="text" class="form-control" id="mosEstatMostra" name="mosEstatMostra" placeholder="" value="" required>
                                 </div>
                               </div>
-                              <div class="row gx-3">
+                              <div class="row gx-3 mb-4">
 
                                 <div class="col-3 ">
-                                  <label for="mosPrOrigen" class="form-label">mosPrOrigen</label>
+                                  <label for="mosPrOrigen" class="form-label">Origen</label>
                                   <input type="text" class="form-control" id="mosPrOrigen" name="mosPrOrigen" placeholder="" value="" required>
                                 </div>
                                  <div class="col-3 ">
-                                  <label for="mosPrSeleccio" class="form-label">mosPrOrigen</label>
+                                  <label for="mosPrSeleccio" class="form-label">Seleccio</label>
                                   <input type="text" class="form-control" id="mosPrSeleccio" name="mosPrSeleccio" placeholder="" value="" required>
                                 </div>
 
@@ -111,7 +111,7 @@
                                   <input type="text" class="form-control" id="mosPrDataEntrega" name="mosPrDataEntrega" placeholder="" value="" required>
                                 </div>
                               </div>
-                              <div class="row gx-3">
+                              <div class="row gx-3 mb-4">
 
                                 <div class="col-3 ">
                                   <label for="mosPrMinGrams" class="form-label">MinGrams</label>
@@ -131,7 +131,7 @@
                                   <input type="text" class="form-control" id="mosPrTipusEntrega" name="mosPrTipusEntrega" placeholder="" value="" required>
                                 </div>
                               </div>
-                              <div class="row gx-3">
+                              <div class="row gx-3 mb-4">
 
                                 <div class="col-3 ">
                                   <label for="mosPrDataSembra" class="form-label">Data Sembra</label>
@@ -146,11 +146,12 @@
                                   <input type="text" class="form-control" id="mosPrPreuAcordat" name="mosPrPreuAcordat" placeholder="" value="" required>
                                 </div>
                                 <div class="col-3 ">
-                                  <label for="mosPrObservacions" class="form-label">Observacions</label>
-                                  <input type="text" class="form-control" id="mosPrObservacions" name="mosPrObservacions" placeholder="" value="" required>
+                                  <label for="mosLlavorsGram" class="form-label">Llavors Gram</label>
+                                  <input type="text" class="form-control" id="mosLlavorsGram" name="mosLlavorsGram" placeholder="" value="" required>
                                 </div>
+                               
                               </div>
-                              <div class="row gx-3">
+                              <div class="row gx-3 mb-4">
                                 <div class="col-3 ">
                                   <label for="mosArrDataEntrega" class="form-label">Data Entrega</label>
                                   <input type="text" class="form-control" id="mosArrDataEntrega" name="mosArrDataEntrega" placeholder="" value="" required>
@@ -168,7 +169,7 @@
                                   <input type="text" class="form-control" id="mosArrEstatEntrega" name="mosArrEstatEntrega" placeholder="" value="" required>
                                 </div>
                               </div>
-                              <div class="row gx-3">
+                              <div class="row gx-3 mb-4">
                                  <div class="col-3 ">
                                   <label for="mosArrEstatGenetic" class="form-label">Estat genetic</label>
                                   <input type="text" class="form-control" id="mosArrEstatGenetic" name="mosArrEstatGenetic" placeholder="" value="" required>
@@ -186,7 +187,7 @@
                                   <input type="text" class="form-control" id="mosEstatComptable" name="mosEstatComptable" placeholder="" value="" required>
                                 </div>
                               </div>
-                              <div class="row gx-3">
+                              <div class="row gx-3 mb-4">
                                  <div class="col-3 ">
                                   <label for="mosDataEntrega" class="form-label">Estat Comptable</label>
                                   <input type="text" class="form-control" id="mosDataEntrega" name="mosDataEntrega" placeholder="" value="" required>
@@ -204,10 +205,10 @@
                                   <input type="text" class="form-control" id="mosGramsNets" name="mosGramsNets" placeholder="" value="" required>
                                 </div>
                               </div>
-                              <div class="row gx-3">
-                                <div class="col-3 ">
-                                  <label for="mosLlavorsGram" class="form-label">Llavors Gram</label>
-                                  <input type="text" class="form-control" id="mosLlavorsGram" name="mosLlavorsGram" placeholder="" value="" required>
+                              <div class="row gx-3 mb-4">
+                                 <div class="col-sm-12">
+                                  <label for="mosPrObservacions" class="form-label">Descripció:</label>
+                                  <textarea class="form-control" id="mosPrObservacions" name="mosPrObservacions" placeholder="" required cols="50" rows="10"></textarea>
                                 </div>
                             </div>
 

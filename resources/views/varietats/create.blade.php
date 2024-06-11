@@ -11,7 +11,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-3">
-                <div class="mt-2 pb-2">
+                <!-- <div class="mt-2 pb-2">
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <strong>Eps!</strong> Hi ha hagut els següents errors:<br/><br/>
@@ -22,7 +22,7 @@
                             </ul>
                         </div>
                     @endif
-                </div>
+                </div> -->
 
                 <div class="row g-5">
                     <div class="col-md-5 col-lg-4 order-md-last">
@@ -33,38 +33,46 @@
                     </div>
                     <div class="col-md-7 col-lg-8">
                         <!-- Espai central -->
-                        <form action="{{ route('varietats.store') }}" method="POST">
+                        <form action="{{ route('varietats.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col">
                                     <div class="row gx-3">
                                         <div class="col-3">
                                             <label for="name" class="form-label">Nom</label>
-                                            <input type="text" class="form-control" id="name" name="name" required>
+                                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+
+                                                  @error('name')
+                                                      <span class="text-danger">{{ $message }}</span>
+                                                  @enderror
                                         </div>
                                         <div class="col-3">
                                             <label for="varCodi" class="form-label">Codi</label>
-                                            <input type="number" class="form-control" id="varCodi" name="varCodi" required>
+                                            <input type="number" class="form-control" id="varCodi" name="varCodi" value="{{ old('varCodi') }}">
                                         </div>
                                         <div class="col-3">
                                             <label for="varOriAny" class="form-label">Varietat Origen Any</label>
-                                            <input type="number" class="form-control" id="varOriAny" name="varOriAny" required>
+                                            <input type="number" class="form-control" id="varOriAny" name="varOriAny" >
                                         </div>
                                         <div class="col-3">
                                             <label for="especie_id" class="form-label">Espècies</label>
                                             <select class="form-select" id="especie_id" name="especie_id">
                                                 <option disabled selected>Selecciona espècie</option>
                                                 @foreach ($especies as $especy)
-                                                    <option value="{{ $especy->id }}">{{ $especy->name }}</option>
+                                                    <option value="{{ $especy->id }}" @if(old('especie_id')==$especy->id) selected @endif >{{ $especy->name }}</option>
                                                 @endforeach
+                                                
                                             </select>
+                                             @error('especie_id')
+                                                      <span class="text-danger">{{ $message }}</span>
+                                                  @enderror
                                         </div>
                                     </div>
 
                                     <div class="row gx-3">
                                           <div class="col-3">
                                             <label for="varTipRegistre" class="form-label">Tipus registre</label>
-                                            <select class="form-select" id="varTipRegistre" name="varTipRegistre" required>
+                                            <select class="form-select" id="varTipRegistre" name="varTipRegistre">
                                                 <option disabled selected>Selecciona</option>
                                                 <option value="Varietat comercial acceptada">Varietat comercial acceptada</option>
                                                 <option value="Varietat comercial en procés">Varietat comercial en procés</option>
@@ -76,7 +84,7 @@
                                         </div>
                                         <div class="col-3">
                                             <label for="varTipCataleg" class="form-label">Tipus registre</label>
-                                            <select class="form-select" id="varTipCataleg" name="varTipCataleg" required>
+                                            <select class="form-select" id="varTipCataleg" name="varTipCataleg">
                                                 <option disabled selected>Selecciona</option>
                                                 <option value="Acceptada">Acceptada</option>
                                                 <option value="En procés">En procés</option>
@@ -84,7 +92,7 @@
                                         </div>
                                         <div class="col-3">
                                             <label for="varCategoria" class="form-label">Categoria</label>
-                                            <select class="form-select" id="varCategoria" name="varCategoria" required>
+                                            <select class="form-select" id="varCategoria" name="varCategoria">
                                                 <option disabled selected>Selecciona</option>
                                                 <option value="Estàndard">Estàndard</option>
                                                 <option value="Sense Categoria">Sense Categoria</option>
@@ -93,7 +101,7 @@
                                         </div>
                                         <div class="col-3">
                                             <label for="varTipDeclaracio" class="form-label">Tipus Declaració</label>
-                                            <select class="form-select" id="varTipDeclaracio" name="varTipDeclaracio" required>
+                                            <select class="form-select" id="varTipDeclaracio" name="varTipDeclaracio">
                                                 <option disabled selected>Selecciona</option>
                                                 <option value="Declarada">Declarada</option>
                                                 <option value="No declarada">No declarada</option>
@@ -104,7 +112,7 @@
                                     <div class="row gx-3">
                                          <div class="col-3">
                                             <label for="varAgrCicle" class="form-label">Agr Cicle</label>
-                                            <select class="form-select" id="varAgrCicle" name="varAgrCicle" required>
+                                            <select class="form-select" id="varAgrCicle" name="varAgrCicle">
                                                 <option disabled selected>Selecciona</option>
                                                 <option value="Anual">Anual</option>
                                                 <option value="Bianual">Bianual</option>
@@ -113,7 +121,7 @@
                                         </div>
                                         <div class="col-3">
                                             <label for="varAgrPrecocitat" class="form-label">Agr Precocitat</label>
-                                            <select class="form-select" id="varAgrPrecocitat" name="varAgrPrecocitat" required>
+                                            <select class="form-select" id="varAgrPrecocitat" name="varAgrPrecocitat">
                                                 <option disabled selected>Selecciona</option>
                                                 <option value="Primerenca">Primerenca</option>
                                                 <option value="Mitjana">Mitjana</option>
@@ -122,7 +130,7 @@
                                         </div>
                                         <div class="col-3">
                                             <label for="varAgrAltRendiment" class="form-label">Agr Alt Rendiment</label>
-                                            <select class="form-select" id="varAgrAltRendiment" name="varAgrAltRendiment" required>
+                                            <select class="form-select" id="varAgrAltRendiment" name="varAgrAltRendiment">
                                                 <option disabled selected>Selecciona</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
@@ -130,7 +138,7 @@
                                         </div>
                                         <div class="col-3">
                                             <label for="varAgrToleranciaSequera" class="form-label">Agr Tolerancia Sequera</label>
-                                            <select class="form-select" id="varAgrToleranciaSequera" name="varAgrToleranciaSequera" required>
+                                            <select class="form-select" id="varAgrToleranciaSequera" name="varAgrToleranciaSequera">
                                                 <option disabled selected>Selecciona</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
@@ -141,7 +149,7 @@
                                       <div class=" row gx-3">
                                         <div class="col-3">
                                             <label for="varAgrPostcollita" class="form-label">Agr Postcollita</label>
-                                            <select class="form-select" id="varAgrPostcollita" name="varAgrPostcollita" required>
+                                            <select class="form-select" id="varAgrPostcollita" name="varAgrPostcollita">
                                                 <option disabled selected>Selecciona</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
@@ -149,7 +157,7 @@
                                         </div>
                                         <div class="col-3">
                                             <label for="varAgrConsellProfessionals" class="form-label">Agr Consell Professionals</label>
-                                            <select class="form-select" id="varAgrConsellProfessionals" name="varAgrConsellProfessionals" required>
+                                            <select class="form-select" id="varAgrConsellProfessionals" name="varAgrConsellProfessionals">
                                                 <option disabled selected>Selecciona</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
@@ -157,7 +165,7 @@
                                         </div>
                                         <div class="col-3">
                                             <label for="varAgrConsellSembra" class="form-label">Agr Consell Sembra</label>
-                                            <select class="form-select" id="varAgrConsellSembra" name="varAgrConsellSembra" required>
+                                            <select class="form-select" id="varAgrConsellSembra" name="varAgrConsellSembra">
                                                 <option disabled selected>Selecciona</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>

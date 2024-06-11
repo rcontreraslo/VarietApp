@@ -20,7 +20,7 @@
                         <x-slot name="name">{{ $menugrup->name }}</x-slot>
                         <x-slot name="children">
                             @foreach ($menugrup->menus as $menu)
-                            <x-nav-link href="/{{ $menu->link }}" :active="request()->routeIs('{{ $menu->link }}.*')">{{ $menu->name }}</x-nav-link>
+                            <x-nav-link href="/{{ $menu->link }}">{{ $menu->name }}</x-nav-link>
                             @endforeach
                         </x-slot>
                     </x-nav-link-parent>
@@ -157,7 +157,7 @@
                 <x-slot name="name">{{ $menugrup->name }}</x-slot>
                 <x-slot name="children">
                     @foreach ($menugrup->menus as $menu)
-                     <a href="/{{ $menu->link }}" :active="request()->routeIs('{{ $menu->link }}.*')">{{ $menu->name }}</a>
+                     <a href="/{{ $menu->link }}">{{ $menu->name }}</a>
                     @endforeach
                 </x-slot>
             </x-responsive-nav-link-parent>

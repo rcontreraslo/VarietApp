@@ -41,49 +41,53 @@
                         @csrf
                         <div class="row">
                             <div class="col">
-                              <div class="row gx-3">
+                             
 
 
                                  <!-- ////////////////////////// AFEGIR CAMPS PER CREAR EL NOU CONTINGUT /////////////////////////////// -->
+                            <div class="row gx-3 mb-4">
 
-
-                                <div class="col-3 ">
-                                  <label for="name" class="form-label">Nom</label>
+                                <div class="col-6 ">
+                                  <label for="name" class="form-label">Nom:</label>
                                   <input type="text" class="form-control" id="name" name="name" placeholder="" value="" required>
                                 </div>
                                 
 
+                                <div class="col-6 ">
+                                  <label for="mulNIF" class="form-label">NIF:</label>
+                                  <input type="number" max="10" class="form-control" id="mulNIF" name="mulNIF" placeholder="" value="" required>
+                                </div>
+                            </div>
+                            <div class="row gx-3 mb-4">
                                 <div class="col-3 ">
-                                  <label for="mulNIF" class="form-label">NIF</label>
-                                  <input type="text" class="form-control" id="mulNIF" name="mulNIF" placeholder="" value="" required>
+                                  <label for="mulPersonaContacte" class="form-label">Persona Contacte:</label>
+                                  <input type="text" class="form-control" id="mulPersonaContacte" name="mulPersonaContacte" placeholder="" value="" required>
                                 </div>
 
-                                <div class="col-3 ">
-                                  <label for="mulTelefon" class="form-label">Telefon</label>
+                                <div class="col-4 ">
+                                  <label for="mulTelefon" class="form-label">Telèfon:</label>
                                   <input type="text" class="form-control" id="mulTelefon" name="mulTelefon" placeholder="" value="" required>
                                 </div>
 
-                                <div class="col-3 ">
-                                  <label for="mulEmail" class="form-label">Email</label>
+                                <div class="col-5 ">
+                                  <label for="mulEmail" class="form-label">Email:</label>
                                   <input type="text" class="form-control" id="mulEmail" name="mulEmail" placeholder="" value="" required>
                                 </div>
 
                             </div>
-                            <div class="row gx-3">
+                            <div class="row gx-3 mb-4">
 
-                                 <div class="col-3 ">
-                                  <label for="mulAdreca" class="form-label">Adreça</label>
+                                 <div class="col-6">
+                                  <label for="mulAdreca" class="form-label">Adreça:</label>
                                   <input type="text" class="form-control" id="mulAdreca" name="mulAdreca" placeholder="" value="" required>
                                 </div>
-
-                                <div class="col-3 ">
-                                  <label for="mulCadastral" class="form-label">Cadastral</label>
-                                  <input type="text" class="form-control" id="mulCadastral" name="mulCadastral" placeholder="" value="" required>
+                                <div class="col-2 ">
+                                  <label for="mulCP" class="form-label">CP:</label>
+                                  <input type="text" class="form-control" id="mulCP" name="mulCP" placeholder="" value="" required>
                                 </div>
-
-
-                                <div class="col-3 ">
-                                  <label for="municipi_id" class="form-label">Municipi</label>
+                                
+                                <div class="col-4">
+                                  <label for="municipi_id" class="form-label">Municipi:</label>
                                   <select class="form-select" id="municipi_id" name="municipi_id">
                                     <option disabled selected>Selecciona municipi</option>
                                      @foreach ($municipis as $municipi)
@@ -91,41 +95,33 @@
                                      @endforeach
                                   </select>
                                 </div>
+                            </div>
+                            <div class="row gx-3 mb-4">
+                                <div class="col-3">
+                                  <label for="mulCadastral" class="form-label">Cadastral:</label>
+                                  <input type="text" class="form-control" id="mulCadastral" name="mulCadastral" placeholder="" value="" required>
+                                </div>
+                                <div class="col-3 ">
+                                  <label for="mulPoligon" class="form-label">Poligon:</label>
+                                  <input type="text" class="form-control" id="mulPoligon" name="mulPoligon" placeholder="" value="" required>
+                                </div>
+                                <div class="col-3 ">
+                                  <label for="mulParcela" class="form-label">Parcela:</label>
+                                  <input type="text" class="form-control" id="mulParcela" name="mulParcela" placeholder="" value="" required>
+                                </div>
+                                <div class="col-3 ">
+                                  <label for="mulRecinte" class="form-label">Recinte:</label>
+                                  <input type="text" class="form-control" id="mulRecinte" name="mulRecinte" placeholder="" value="" required>
+                                </div>
+                            </div>
 
                                 
 
-                                <div class="col-3 ">
-                                  <label for="mulPoligon" class="form-label">Poligon</label>
-                                  <input type="text" class="form-control" id="mulPoligon" name="mulPoligon" placeholder="" value="" required>
-                                </div>
-                            </div>
-
-                            <div class="row gx-3">
-
-                                <div class="col-3 ">
-                                  <label for="mulParcela" class="form-label">Parcela</label>
-                                  <input type="text" class="form-control" id="mulParcela" name="mulParcela" placeholder="" value="" required>
-                                </div>
-
-                                <div class="col-3 ">
-                                  <label for="mulRecinte" class="form-label">Recinte</label>
-                                  <input type="text" class="form-control" id="mulRecinte" name="mulRecinte" placeholder="" value="" required>
-                                </div>
-
-                                <div class="col-3 ">
-                                  <label for="mulPersonaContacte" class="form-label">Persona Contacte</label>
-                                  <input type="text" class="form-control" id="mulPersonaContacte" name="mulPersonaContacte" placeholder="" value="" required>
-                                </div>
-
-                                <div class="col-3 ">
-                                  <label for="mulCP" class="form-label">CP:</label>
-                                  <input type="text" class="form-control" id="mulCP" name="mulCP" placeholder="" value="" required>
-                                </div>
-                            </div>
-                            <div class="row gx-3">
+                            
+                            <div class="row gx-3 mb-4">
 
                                 <div class="col-sm-12">
-                                  <label for="mulObservacions" class="form-label">Descripció</label>
+                                  <label for="mulObservacions" class="form-label">Descripció:</label>
                                   <textarea class="form-control" id="mulObservacions" name="mulObservacions" placeholder="" required cols="50" rows="10"></textarea>
                                 </div>
 

@@ -32,6 +32,7 @@ class VarietatRequest extends FormRequest
            // 'varCodi' => ['required','integer', $rule_varcodi_unique],
             'name' => ['required','string','max:255'],
             'especie_id' => ['required'],
+            'image' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
            
         ];
     }
@@ -47,7 +48,7 @@ class VarietatRequest extends FormRequest
             'name.string' => 'El nom ha de ser un text.',
             'name.max' => 'El nom no pot ser mes llarg de 255 caracters.',
             'especie_id.required' => 'Selecciona una espècie.',
-            'image.image' => 'El codi de barres no és una imatge.',
+            //'image.image' => 'El codi de barres no és una pppp.',
             'image.mimes' => 'El codi de barres és un format acceptat.',
             'image.max' => 'El codi de barres no pot pesar més de 2MB.',
         ];

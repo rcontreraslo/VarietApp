@@ -42,41 +42,47 @@
                         @method('PUT')
                         <div class="row">
                             <div class="col">
-                              <div class="row gx-3">
+                              <div class="row gx-3 mb-4">
 
-                                <div class="col-3 ">
-                                  <label for="name" class="form-label">Nom</label>
+                                <div class="col-6 ">
+                                  <label for="name" class="form-label">Nom:</label>
                                   <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{$multiplicador->name}}" required>
                                 </div>
 
-                                <div class="col-3 ">
-                                  <label for="mulNIF" class="form-label">NIF</label>
+                                <div class="col-6 ">
+                                  <label for="mulNIF" class="form-label">NIF:</label>
                                   <input type="text" class="form-control" id="mulNIF" name="mulNIF" placeholder="" value="{{$multiplicador->mulNIF}}" required>
+                                </div>
+                            </div>
+                            <div class="row gx-3 mb-4">
+                                <div class="col-4 ">
+                                  <label for="mulPersonaContacte" class="form-label">Personal Contacte:</label>
+                                  <input type="text" class="form-control" id="mulPersonaContacte" name="mulPersonaContacte" placeholder="" value="{{$multiplicador->mulPersonaContacte}}" required>
                                 </div>
                                 
                                 <div class="col-3 ">
-                                  <label for="mulTelefon" class="form-label">Telefon</label>
+                                  <label for="mulTelefon" class="form-label">Telefon:</label>
                                   <input type="text" class="form-control" id="mulTelefon" name="mulTelefon" placeholder="" value="{{$multiplicador->mulTelefon}}" required>
                                 </div>
 
-                                <div class="col-3 ">
-                                  <label for="mulEmail" class="form-label">Email</label>
+                                <div class="col-5 ">
+                                  <label for="mulEmail" class="form-label">Email:</label>
                                   <input type="text" class="form-control" id="mulEmail" name="mulEmail" placeholder="" value="{{$multiplicador->mulEmail}}" required>
                                 </div>
                             </div>
-                            <div class="row gx-3">
-                                <div class="col-3 ">
-                                  <label for="mulAdreca" class="form-label">Adreça</label>
+                           <div class="row gx-3 mb-4">
+                                <div class="col-6 ">
+                                  <label for="mulAdreca" class="form-label">Adreça:</label>
                                   <input type="text" class="form-control" id="mulAdreca" name="mulAdreca" placeholder="" value="{{$multiplicador->mulAdreca}}" required>
                                 </div>
 
-                                 <div class="col-3 ">
-                                  <label for="mulCadastral" class="form-label">Cadastral</label>
-                                  <input type="text" class="form-control" id="mulCadastral" name="mulCadastral" placeholder="" value="{{$multiplicador->mulCadastral}}" required>
+                                <div class="col-2 ">
+                                  <label for="mulCP" class="form-label">CP:</label>
+                                  <input type="text" class="form-control" id="mulCP" name="mulCP" placeholder="" value="{{$multiplicador->mulCP}}" required>
                                 </div>
 
-                                <div class="col-3 ">
-                                 <label for="municipi_id" class="form-label">Provincia</label>
+                                <div class="col-4 ">
+                                 <label for="municipi_id" class="form-label">Municipi:</label>
                                   <select class="form-select" id="municipi_id" name="municipi_id">
                                     <option disabled selected>Selecciona provincia</option>
                                      @foreach ($municipis as $municipi)
@@ -84,36 +90,30 @@
                                      @endforeach
                                   </select>
                                 </div>
+                            </div>
+                            <div class="row gx-3 mb-4">
+
+
+                                 <div class="col-4 ">
+                                  <label for="mulCadastral" class="form-label">Cadastral:</label>
+                                  <input type="text" class="form-control" id="mulCadastral" name="mulCadastral" placeholder="" value="{{$multiplicador->mulCadastral}}" required>
+                                </div>
+                                
                                   
-                                  <div class="col-3 ">
-                                  <label for="mulPoligon" class="form-label">Poligon</label>
+                                  <div class="col-2 ">
+                                  <label for="mulPoligon" class="form-label">Poligon:</label>
                                   <input type="text" class="form-control" id="mulPoligon" name="mulPoligon" placeholder="" value="{{$multiplicador->mulPoligon}}" required>
                                 </div>
-                            </div>
-                            <div class="row gx-3">
-
-                                <div class="col-3 ">
-                                  <label for="mulParcela" class="form-label">Parcela</label>
+                                <div class="col-2 ">
+                                  <label for="mulParcela" class="form-label">Parcela:</label>
                                   <input type="text" class="form-control" id="mulParcela" name="mulParcela" placeholder="" value="{{$multiplicador->mulParcela}}" required>
                                 </div>
-
-                                <div class="col-3 ">
-                                  <label for="mulRecinte" class="form-label">Recinte</label>
+                                <div class="col-2 ">
+                                  <label for="mulRecinte" class="form-label">Recinte:</label>
                                   <input type="text" class="form-control" id="mulRecinte" name="mulRecinte" placeholder="" value="{{$multiplicador->mulRecinte}}" required>
                                 </div>
-
-                                <div class="col-3 ">
-                                  <label for="mulPersonaContacte" class="form-label">Personal Contacte</label>
-                                  <input type="text" class="form-control" id="mulPersonaContacte" name="mulPersonaContacte" placeholder="" value="{{$multiplicador->mulPersonaContacte}}" required>
-                                </div>
-
-
-                                
-                                <div class="col-3 ">
-                                  <label for="mulCP" class="form-label">CP</label>
-                                  <input type="text" class="form-control" id="mulCP" name="mulCP" placeholder="" value="{{$multiplicador->mulCP}}" required>
-                                </div>
                             </div>
+                            
                             <div class="row gx-3">
 
                                 <div class="col-sm-12">

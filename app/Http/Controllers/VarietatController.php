@@ -62,19 +62,19 @@ class VarietatController extends Controller
        
         
         
-        $varCodiBarresImg = Varietat::orderby('varCodi','Desc')->first();
-        $varCodiBarresImg=$varCodiBarresImg->varCodiBarresImg+1;
+       // $varCodiBarresImg = Varietat::orderby('varCodi','Desc')->first();
+      //  $varCodiBarresImg=$varCodiBarresImg->varCodiBarresImg+1;
         //$imageName = time().'.'.$request->image->extension();  
-         $imageName = $varCodi.'-'.$request->image->getClientOriginalName();  
-       
-        $request->image->move(public_path('img/varietats'), $imageName);
-        
-        
-        $request->request->add(['varCodi' => $varCodi, 'varCodiBarresImg' => $imageName]);
+        if(!empty($request->image)){
+            $imageName = $request->name.'-'.$request->image->getClientOriginalName();  
+            $request->image->move(public_path('img/varietats'), $imageName);
+            $request->request->add(['varCodiBarresImg' => $imageName]);
+        }
+
         $request->request->add(['varAnyBaixa' => 0]);
         $varietatNew=Varietat::create($request->all());
        
-        return redirect()->route('varietats.show',['varietat' => $varietatNew->id])
+        return redirect()->route('varietats.index')
                         ->with('success','Varietat creada amb èxit!');
     }
 

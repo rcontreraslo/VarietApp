@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('varietats', function (Blueprint $table) {
             $table->id();
-            $table->integer('varCodi');
+            $table->string('varCodi')->nullable();
             $table->string('name');
             $table->foreignId('especie_id')->constrained();
             $table->string('varNomCientific')->nullable();
@@ -49,7 +49,7 @@ return new class extends Migration
             $table->text('varAgrSeguiment')->nullable();
 
 /* Origen */
-            $table->foreignId('persone_id')->constrained();
+            $table->foreignId('persone_id')->nullable()->constrained();
             $table->integer('varOriAny')->nullable();
             $table->text('varOriObservacions')->nullable();
             $table->timestamps();

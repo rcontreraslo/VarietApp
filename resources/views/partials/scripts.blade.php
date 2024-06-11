@@ -30,7 +30,6 @@
                     { data: 'especie.name', name: 'especie.name' },
                     { data: 'especie.espNomCientific', name: 'especie.espNomCientific','visible': false },
                     { data: 'especie.familie.name', name: 'especie.familie.name','visible': false },
-                    { data: 'persone.name', name: 'persone.name' },
                     { data: 'varOriAny', name: 'varOriAny','visible': false },
                     { data: 'varAnyBaixa', name:'varAnyBaixa', render: {
                         _: 'display',

@@ -20,7 +20,6 @@
                             <th>Espècie</th>
                             <th>E. Científic</th>
                             <th>Familia</th>
-                            <th>Informant</th>
                             <th>Any Entrada</th>
                             <th>Estat</th>
                             <th width="50px"></th>

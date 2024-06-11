@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Editar Persona:  {{$persone-> name}}
+            Editar Persona:  {{$persone-> name}} {{$persone->perCognoms}}
         </h2>
         <a class="btn btn-info" href="{{ route('persones.index') }}"><i class="fa-solid fa-arrow-left"></i> Tornar a llistat</a>
     </x-slot>
@@ -42,28 +42,40 @@
                         @method('PUT')
                         <div class="row">
                             <div class="col">
-                              <div class="row gx-3">
+                              <div class="row gx-3 mb-4">
 
-                                <div class="col-3 ">
+                                <div class="col-4 ">
                                   <label for="name" class="form-label">Nom:</label>
                                   <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{$persone->name}}" required>
                                 </div>
 
-                                <div class="col-3 ">
+                                <div class="col-4 ">
                                   <label for="perCognoms" class="form-label">Cognoms:</label>
                                   <input type="text" class="form-control" id="perCognoms" name="perCognoms" placeholder="" value="{{$persone->perCognoms}}" required>
                                 </div>
-                                <div class="col-3 ">
+
+                                <div class="col-4 ">
+                                  <label for="perVinculacio" class="form-label">Vinculacio:</label>
+                                  <input type="text" class="form-control" id="perVinculacio" name="perVinculacio" placeholder="" value="{{$persone->perVinculacio}}" required>
+                                </div>
+                            </div>
+                            <div class="row gx-3 mb-4">
+
+                                <div class="col-6 ">
                                   <label for="perOrganitzacio" class="form-label">Organització:</label>
                                   <input type="text" class="form-control" id="perOrganitzacio" name="perOrganitzacio" placeholder="" value="{{$persone->perOrganitzacio}}" required>
                                 </div>
-
-                                <div class="col-3 ">
+                                <div class="col-2 ">
+                                  <label for="perTelefon" class="form-label">Telefon:</label>
+                                  <input type="text" class="form-control" id="perTelefon" name="perTelefon" placeholder="" value="{{$persone->perTelefon}}" required>
+                                </div>
+                                <div class="col-4 ">
                                   <label for="perEmail" class="form-label">Email:</label>
                                   <input type="text" class="form-control" id="perEmail" name="perEmail" placeholder="" value="{{$persone->perEmail}}" required>
                                 </div>
-
-                                <div class="col-3 ">
+                            </div>
+                            <div class="row gx-3 mb-4">
+                                <div class="col-6 ">
                                  <label for="municipi_id" class="form-label">Municipi:</label>
                                   <select class="form-select" id="municipi_id" name="municipi_id">
                                     <option value="0">...</option>
@@ -72,23 +84,12 @@
                                      @endforeach
                                   </select>
                                 </div>
-
-                                <div class="col-3 ">
-                                  <label for="perVinculacio" class="form-label">Vinculacio:</label>
-                                  <input type="text" class="form-control" id="perVinculacio" name="perVinculacio" placeholder="" value="{{$persone->perVinculacio}}" required>
-                                </div>
-
-                                <div class="col-3 ">
+                                <div class="col-2 ">
                                   <label for="perCP" class="form-label">CP:</label>
                                   <input type="text" class="form-control" id="perCP" name="perCP" placeholder="" value="{{$persone->perCP}}" required>
                                 </div>
-
-                                
-
-                                <div class="col-3 ">
-                                  <label for="perTelefon" class="form-label">Telefon:</label>
-                                  <input type="text" class="form-control" id="perTelefon" name="perTelefon" placeholder="" value="{{$persone->perTelefon}}" required>
-                                </div>
+                            </div>
+                            <div class="row gx-3 mb-4">
 
                                 <div class="col-sm-12">
                                   <label for="perObservacions"class="form-label">Descripció:</label>

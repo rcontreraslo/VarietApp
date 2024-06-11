@@ -41,42 +41,40 @@
                         @csrf
                         <div class="row">
                             <div class="col">
-                              <div class="row gx-3">
+                              <div class="row gx-3 mb-4">
 
-                                <div class="col-3 ">
-                                  <label for="name" class="form-label">Nom</label>
+                                <div class="col-4 ">
+                                  <label for="name" class="form-label">Nom:</label>
                                   <input type="text" class="form-control" id="name" name="name" placeholder="" value="" required>
                                 </div>
-                                <div class="col-3 ">
-                                  <label for="perCognoms" class="form-label">Cognoms</label>
+                                <div class="col-4 ">
+                                  <label for="perCognoms" class="form-label">Cognoms:</label>
                                   <input type="text" class="form-control" id="perCognoms" name="perCognoms" placeholder="" value="" required>
                                 </div>
-
-                                <div class="col-3 ">
-                                  <label for="perOrganitzacio" class="form-label">Organització</label>
+                                <div class="col-4 ">
+                                  <label for="perVinculacio" class="form-label">Vinculació:</label>
+                                  <input type="text" class="form-control" id="perVinculacio" name="perVinculacio" placeholder="" value="" required>
+                                </div>
+                                </div>
+                              <div class="row gx-3 mb-4">
+                                <div class="col-5 ">
+                                  <label for="perOrganitzacio" class="form-label">Organització:</label>
                                   <input type="text" class="form-control" id="perOrganitzacio" name="perOrganitzacio" placeholder="" value="" required>
                                 </div>
                                 <div class="col-3 ">
-                                  <label for="perAnyNaixement" class="form-label">Any Naixement</label>
-                                  <input type="number" class="form-control" id="perAnyNaixement" name="perAnyNaixement" placeholder="" value="" required>
+                                  <label for="perTelefon" class="form-label">Telèfon:</label>
+                                  <input type="number" min="9" class="form-control" id="perTelefon" name="perTelefon" placeholder="" value="" required>
                                 </div>
-
-                                                                     
-                         </div>
-                            <div class="row gx-3">
-
-                                <div class="col-3 ">
-                                  <label for="perVinculacio" class="form-label">Vinculació</label>
-                                  <input type="text" class="form-control" id="perVinculacio" name="perVinculacio" placeholder="" value="" required>
-                                </div>
-
-                                <div class="col-3 ">
-                                  <label for="perCP" class="form-label">CP:</label>
-                                  <input type="number" step="any" class="form-control" id="perCP" name="perCP"  placeholder="" value="" required>
-                                </div>
-
 
                             <div class="col-4 ">
+                                  <label for="perEmail" class="form-label">Email:</label>
+                                  <input type="text" class="form-control" id="perEmail" name="perEmail" placeholder="" value="" required>
+                                </div>
+                                
+                            </div>
+
+                            <div class="row gx-3 mb-4">
+                            <div class="col-6 ">
                                   <label for="municipi_id" class="form-label">Municipi</label>
                                   <select class="form-select" id="municipi_id" name="municipi_id">
                                     <option disabled selected>Selecciona municipi</option>
@@ -84,23 +82,18 @@
                                        <option value="{{ $municipi->id }}">{{$municipi->name}}</option>
                                      @endforeach
                                   </select>
+                                </div> 
+                            <div class="col-2 ">
+                                  <label for="perCP" class="form-label">CP:</label>
+                                  <input type="number" step="any" class="form-control" id="perCP" name="perCP"  placeholder="" value="" required>
                                 </div>
-                            </div>
+                              
 
-                            <div class="row gx-3">   
-
-                            <div class="col-3 ">
-                                  <label for="perTelefon" class="form-label">Telefon</label>
-                                  <input type="number" class="form-control" id="perTelefon" name="perTelefon" placeholder="" value="" required>
-                                </div>
-                            <div class="col-3 ">
-                                  <label for="perEmail" class="form-label">Email</label>
-                                  <input type="text" class="form-control" id="perEmail" name="perEmail" placeholder="" value="" required>
-                                </div>
+                            
                             </div>
 
 
-                            <div class="row gx-3">
+                            <div class="row gx-3 mb-4">
 
                                 <div class="col-sm-12">
                                   <label for="perObservacions">Descripció</label>

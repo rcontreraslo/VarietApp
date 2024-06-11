@@ -41,25 +41,25 @@
                         @csrf
                         <div class="row">
                             <div class="col">
-                              <div class="row gx-3">
-
-
+                              <div class="row gx-3 mb-4">
                                  <!-- ////////////////////////// AFEGIR CAMPS PER CREAR EL NOU CONTINGUT /////////////////////////////// -->
-
-
                                 <div class="col-3 ">
-                                  <label for="name" class="form-label">Nom</label>
+                                  <label for="name" class="form-label">Nom:</label>
                                   <input type="text" class="form-control" id="name" name="name" placeholder="" value="" required>
                                 </div>
                                 
 
-                                <div class="col-3 ">
-                                  <label for="espCodi" class="form-label">Especie Codi</label>
+                                <div class="col-2 ">
+                                  <label for="espCodi" class="form-label">Codi:</label>
                                   <input type="text" class="form-control" id="espCodi" name="espCodi" placeholder="" value="" required>
+                                </div>
+                                <div class="col-4 ">
+                                  <label for="espNomCientific" class="form-label">Nom cientific:</label>
+                                  <input type="text" class="form-control" id="espNomCientific" name="espNomCientific" placeholder="" value="" required>
                                 </div>
 
                                   <div class="col-3 ">
-                                  <label for="familie_id" class="form-label">Familia</label>
+                                  <label for="familie_id" class="form-label">Familia:</label>
                                   <select class="form-select" id="familie_id" name="familie_id">
                                     <option disabled selected>Selecciona Familia</option>
                                      @foreach ($families as $family)
@@ -67,58 +67,10 @@
                                      @endforeach
                                   </select>
                                 </div>
-
-                                 <div class="col-3 ">
-                                  <label for="passaportFito" class="form-label">Passaport</label>
-                                  <input type="text" class="form-control" id="passaportFito" name="passaportFito" placeholder="" value="" required>
-                                </div>
                             </div>
-                            <div class="row gx-3">
-
-                                <div class="col-3 ">
-                                     <label for="espRegulacio" class="form-label">Tipus registre</label>
-                                      <select class="form-select" id="espRegulacio" name="espRegulacio" placeholder="Selecciona" value="" required>
-                                      <option disabled selected>Selecciona</option>
-                                      <option value="R hortícoles">R hortícoles</option>
-                                        <option value="R farrageres">R farrageres</option>
-                                        <option value="R panís">R panís</option>
-                                        <option value="R sorgo">R sorgo</option>
-                                        <option value="R panís">R tèxtils</option>
-                                        <option value="R sorgo">R oleaginoses</option>
-                                        <option value="R panís">NR aromàtiques</option>
-                                        <option value="R sorgo">NR extensius</option>
-                                        <option value="R panís">NR hortícoles</option>
-                                        <option value="R sorgo">NR ornamentals</option>
-                                                     
-                                    </select>
-                                </div>
-
-
-                                <div class="col-3 ">
-                                  <label for="espTempGermOptima" class="form-label">Temp Germinacio Optim</label>
-                                  <input type="text" class="form-control" id="espTempGermOptima" name="espTempGermOptima" placeholder="" value="" required>
-                                </div>
-
-                                <div class="col-3 ">
-                                  <label for="espTempGermInterval" class="form-label">TempGerminacio Interval</label>
-                                  <input type="text" class="form-control" id="espTempGermInterval" name="espTempGermInterval" placeholder="" value="" required>
-                                </div>
-
-                                <div class="col-3 ">
-                                  <label for="espDiesGerm" class="form-label">Dies Germinacio</label>
-                                  <input type="text" class="form-control" id="espDiesGerm" name="espDiesGerm" placeholder="" value="" required>
-                                </div>
-                            </div>
-
-                            <div class="row gx-3">
-
-                                <div class="col-3 ">
-                                  <label for="espAnysDuracio" class="form-label">Anys Duració:</label>
-                                  <input type="text" class="form-control" id="espAnysDuracio" name="espAnysDuracio" placeholder="" value="" required>
-                                </div>
-
-                                <div class="col-3 ">
-                                     <label for="passaportFito" class="form-label">Tipus registre</label>
+                             <div class="row gx-3 mb-4">
+                                 <div class="col-6 ">
+                                     <label for="passaportFito" class="form-label">Passaport FitoSanitari:</label>
                                       <select class="form-select" id="passaportFito" name="passaportFito" placeholder="Selecciona" value="" required>
                                       <option disabled selected>Selecciona</option>
                                       <option value="Si">Si</option>
@@ -126,43 +78,69 @@
                                                      
                                     </select>
                                 </div>
+                                <div class="col-6 ">
+                                     <label for="espRegulacio" class="form-label">Regulació:</label>
+                                      <select class="form-select" id="espRegulacio" name="espRegulacio" placeholder="Selecciona" value="" required>
+                                      <option disabled selected>Selecciona</option>
+                                      <option value="R hortícoles">R hortícoles</option>
+                                        <option value="R farrageres">R farrageres</option>
+                                        <option value="R panís">R panís</option>
+                                        <option value="R sorgo">R sorgo</option>
+                                        <option value="R tèxtils">R tèxtils</option>
+                                        <option value="R oleaginoses">R oleaginoses</option>
+                                        <option value="NR aromàtiques">NR aromàtiques</option>
+                                        <option value="NR extensius">NR extensius</option>
+                                        <option value="NR hortícoles">NR hortícoles</option>
+                                        <option value="NR ornamentals">NR ornamentals</option>
+                                                     
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row gx-3 mb-4">
+                                <div class="col-6 ">
+                                  <label for="espTempGermOptima" class="form-label">Temp Germinació Optima:</label>
+                                  <input type="text" class="form-control" id="espTempGermOptima" name="espTempGermOptima" placeholder="" value="" required>
+                                </div>
+                                <div class="col-6 ">
+                                  <label for="espTempGermInterval" class="form-label">Temp Germinació Interval:</label>
+                                  <input type="text" class="form-control" id="espTempGermInterval" name="espTempGermInterval" placeholder="" value="" required>
+                                </div>
+                            </div>
+                            <div class="row gx-3 mb-4">
 
+                                <div class="col-3 ">
+                                  <label for="espDiesGerm" class="form-label">Dies Germinació:</label>
+                                  <input type="text" class="form-control" id="espDiesGerm" name="espDiesGerm" placeholder="" value="" required>
+                                </div>
+                                <div class="col-3 ">
+                                  <label for="espAnysDuracio" class="form-label">Anys Duració:</label>
+                                  <input type="text" class="form-control" id="espAnysDuracio" name="espAnysDuracio" placeholder="" value="" required>
+                                </div>
                                 <div class="col-3 ">
                                   <label for="espPercGerm" class="form-label">Germinació:</label>
                                   <input type="text" class="form-control" id="espPercGerm" name="espPercGerm" placeholder="" value="" required>
                                 </div>
-
+                                <div class="col-3">
+                                    <label for="espNumLlavorsGr" class="form-label">Nº Llavors Germinació:</label>
+                                  <input type="text" class="form-control" id="espNumLlavorsGr" name="espNumLlavorsGr" placeholder="" value="" required>
+                                </div>
+                                 
+                            </div>
+                            <div class="row gx-3">
                                 <div class="col-3 ">
                                   <label for="espGrReserva" class="form-label">Germinació Reserva:</label>
                                   <input type="text" class="form-control" id="espGrReserva" name="espGrReserva" placeholder="" value="" required>
-                                </div>  
-                            </div>
-                            <div class="row gx-3">
+                                </div> 
                                 <div class="col-3">
                                     <label for="espKNO3Germ" class="form-label">Germinació KN03:</label>
                                   <input type="text" class="form-control" id="espKNO3Germ" name="espKNO3Germ" placeholder="" value="" required>
                                 </div>
-
-                                <div class="col-3">
-                                    <label for="espNumLlavorsGr" class="form-label">Numero Llavors</label>
-                                  <input type="text" class="form-control" id="espNumLlavorsGr" name="espNumLlavorsGr" placeholder="" value="" required>
-                                </div>
-
                                 <div class="col-3">
                                     <label for="espDeclarCultius" class="form-label">Declarar Cultius</label>
                                   <input type="text" class="form-control" id="espDeclarCultius" name="espDeclarCultius" placeholder="" value="" required>
                                 </div>
-
-                                    
-
-                                
-                                
-
-                                <!-- /////////////////////////////////////////////// FI /////////////////////////////// -->
-
-
-
                               </div>
+                               <!-- /////////////////////////////////////////////// FI /////////////////////////////// -->
                               
                             </div>
                         </div>
