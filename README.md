@@ -69,7 +69,7 @@ php artisan serve
 
 ```
 
-Ara pots accedir a l'aplicació al teu navegador a través de l'URL http://localhost:8000.
+Ara pots accedir a l'aplicació al teu navegador a través de l'URL http://localhost:8000/register per tal de crear el usuari d'accés.
 ## **Llicència**
 Aquest projecte està llicenciat sota la Llicència MIT. Consulta el fitxer LICENSE per a més informació.
 
