@@ -12,27 +12,23 @@ Abans de començar, assegura't de tenir instal·lades les següents eines al teu
 ### **1. Clonar el Repositori**
 Clona el repositori del projecte des de GitHub al teu directori local:
 
-bash
-
-Copiar codi
+```
 
 git clone https://github.com/rcontreraslo/VarietApp.git
+
+```
 
 cd project-name
 ### **2. Instal·lar Dependències**
 Executa el següent comandament per instal·lar totes les dependències PHP necessàries:
-
-bash
-
-Copiar codi
+```
 
 composer install
+
+```
 ### **3. Configurar l'Entorn**
 Obre el fitxer .env amb un editor de text i actualitza les següents línies per configurar la connexió a la base de dades:
-
-makefile
-
-Copiar codi
+```
 
 DB\_CONNECTION=mysql
 
@@ -45,22 +41,23 @@ DB\_DATABASE=nom\_de\_la\_teva\_base\_de\_dades
 DB\_USERNAME=el\_teu\_usuari
 
 DB\_PASSWORD=la\_teva\_contrasenya
+
+```
 ### **4. Migrar la Base de Dades**
 Executa les migracions per crear les taules necessàries a la base de dades:
 
-bash
-
-Copiar codi
+```
 
 php artisan migrate
+
+```
 ### **5. Executar el Servidor de Desenvolupament**
 Finalment, inicia el servidor de desenvolupament de Laravel:
-
-bash
-
-Copiar codi
+```
 
 php artisan serve
+
+```
 
 Ara pots accedir a l'aplicació al teu navegador a través de l'URL http://localhost:8000.
 ## **Llicència**
