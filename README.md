@@ -1,66 +1,69 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+﻿# **VarApp**
+Aquest projecte és una aplicació web desenvolupada amb Laravel i MySQL per gestionar el registre i la multiplicació de llavors de varietats locals. Aquest README proporciona una guia pas a pas per instal·lar, configurar i executar l'aplicació.
+## **Requisits Previs**
+Abans de començar, assegura't de tenir instal·lades les següents eines al teu sistema:
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+- [Git](https://git-scm.com/)
+- [Composer](https://getcomposer.org/)
+- [PHP](https://www.php.net/) (versió 7.4 o superior)
+- [MySQL](https://www.mysql.com/)
+- [Node.js](https://nodejs.org/) (opcional per a la compilació d'actius front-end)
+## **Instal·lació**
+### **1. Clonar el Repositori**
+Clona el repositori del projecte des de GitHub al teu directori local:
 
-## About Laravel
+bash
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Copiar codi
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+git clone https://github.com/rcontreraslo/VarietApp.git
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+cd project-name
+### **2. Instal·lar Dependències**
+Executa el següent comandament per instal·lar totes les dependències PHP necessàries:
 
-## Learning Laravel
+bash
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Copiar codi
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+composer install
+### **3. Configurar l'Entorn**
+Obre el fitxer .env amb un editor de text i actualitza les següents línies per configurar la connexió a la base de dades:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+makefile
 
-## Laravel Sponsors
+Copiar codi
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+DB\_CONNECTION=mysql
 
-### Premium Partners
+DB\_HOST=127.0.0.1
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+DB\_PORT=3306
 
-## Contributing
+DB\_DATABASE=nom\_de\_la\_teva\_base\_de\_dades
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+DB\_USERNAME=el\_teu\_usuari
 
-## Code of Conduct
+DB\_PASSWORD=la\_teva\_contrasenya
+### **4. Migrar la Base de Dades**
+Executa les migracions per crear les taules necessàries a la base de dades:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+bash
 
-## Security Vulnerabilities
+Copiar codi
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+php artisan migrate
+### **5. Executar el Servidor de Desenvolupament**
+Finalment, inicia el servidor de desenvolupament de Laravel:
 
-## License
+bash
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Copiar codi
+
+php artisan serve
+
+Ara pots accedir a l'aplicació al teu navegador a través de l'URL http://localhost:8000.
+## **Llicència**
+Aquest projecte està llicenciat sota la Llicència MIT. Consulta el fitxer LICENSE per a més informació.
+
+Aquest README proporciona una guia completa per instal·lar, configurar i executar l'aplicació web. Si necessites més informació, consulta la [documentació de Laravel](https://laravel.com/docs) o contacta'ns directament.
