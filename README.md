@@ -1,4 +1,4 @@
-﻿# **VarApp**
+﻿# **VarietApp**
 Aquest projecte és una aplicació web desenvolupada amb Laravel i MySQL per gestionar el registre i la multiplicació de llavors de varietats locals. Aquest README proporciona una guia pas a pas per instal·lar, configurar i executar l'aplicació.
 ## **Requisits Previs**
 Abans de començar, assegura't de tenir instal·lades les següents eines al teu sistema:
