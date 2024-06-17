@@ -11,7 +11,7 @@
             
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-3">
        
-                <div class="mt-2 pb-2">
+                <!-- <div class="mt-2 pb-2">
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <strong>Eps!</strong> Hi ha hagut els següents errors:<br/><br/>
@@ -22,12 +22,13 @@
                         </ul>
                     </div>
                 @endif
-               </div>
+               </div> -->
 
                <div class="row g-5">
                     <div class="col-md-5 col-lg-4 order-md-last">
                         <!-- ///////////////////////////////////////////////// Barra lateral dreta /// -->
-                        <h2>Mòdul lateral info</h2>
+                        <h2>Informació:</h2>
+                        <label class="obligat mb-4" style="break-after: right;">Els camps marcats són obligatoris</label>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum egestas arcu faucibus venenatis. Vivamus vitae vulputate eros.</p>
 
 
@@ -44,8 +45,11 @@
                               <div class="row gx-3">
 
                                 <div class="col-3 ">
-                                  <label for="name" class="form-label">Nom</label>
-                                  <input type="text" class="form-control" id="name" name="name" placeholder="" value="" required>
+                                  <label for="name" class="form-label obligat">Nom</label>
+                                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="" value="">
+                                   @error('name')
+                                          <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                 </div>
 
                                                           

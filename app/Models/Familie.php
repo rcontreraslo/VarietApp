@@ -15,6 +15,6 @@ class Familie extends Model
     
     public function especies()
     {
-        return $this->hasMany(Especie::class);
+        return $this->hasMany(Especie::class)->orderBy('name','asc');
     }
 }

@@ -16,7 +16,6 @@
                             <th>#</th>
                             <th>Lot</th>
                             <th>Varietat</th>
-                            <th>Especie</th>
                            <th>Codi</th>
                             <th width="50px"></th>
                         </tr>

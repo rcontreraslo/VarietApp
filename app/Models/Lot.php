@@ -16,6 +16,7 @@ class Lot extends Model
     {
         return $this->belongsTo(Varietat::class);
     }
+
     public function mostre()
     {
         return $this->belongsTo(Mostre::class);

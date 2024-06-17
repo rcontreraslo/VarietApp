@@ -51,7 +51,7 @@ class VarietatController extends Controller
 
         //
         $especies = Especie::orderby('name')->get(['name','id']);
-        $informants = Persone::where('perVinculacio','Informant')->orderby('name')->get(['name','perCognoms','id']);
+        $informants = Persone::where('perVinculacio','Informant')->orderby('perCognoms')->get(['name','perCognoms','id']);
         return view('varietats.create',compact('especies','informants'));
     }
 

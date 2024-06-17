@@ -14,6 +14,6 @@ class Provincie extends Model
     
     public function municipis()
     {
-        return $this->hasMany(Municipi::class)->orderBy('id','desc');
+        return $this->hasMany(Municipi::class)->orderBy('name','asc');
     }
 }

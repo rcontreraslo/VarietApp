@@ -19,6 +19,6 @@ class Especie extends Model
     
     public function varietats()
     {
-        return $this->hasMany(Varietat::class);
+        return $this->hasMany(Varietat::class)->orderBy('name','asc');
     }
 }

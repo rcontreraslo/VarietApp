@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('varietats', function (Blueprint $table) {
             $table->id();
-            $table->string('varCodi')->nullable();
+            $table->string('varCodi')->unique();
             $table->string('name');
             $table->foreignId('especie_id')->constrained();
             $table->string('varNomCientific')->nullable();

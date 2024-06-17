@@ -16,4 +16,8 @@ class Multiplicador extends Model
     {
         return $this->belongsTo(Municipi::class);
     }
+    public function mostres()
+    {
+        return $this->hasMany(Mostre::class)->orderBy('id','desc');
+    }
 }

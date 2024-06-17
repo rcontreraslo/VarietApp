@@ -55,3 +55,12 @@
 .dataTables_info{
     margin-bottom: 10px;
 }
+
+/* ///////////////////////////////////////  FORMULARIS CAMPS /////////////////////////////////////////*/
+label{color:#378250;}
+label.obligat{border-left: 3px solid red; padding-left: 5px}
+
+
+/* ///////////////////////////////////////  FITXA CAMPS /////////////////////////////////////////*/
+h6{font-style: italic;}
+.label{color:#378250; text-transform: uppercase; font-weight: bold;}

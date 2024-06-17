@@ -17,4 +17,8 @@ class Persone extends Model
     {
         return $this->belongsTo(Municipi::class);
     }
+    public function varietats()
+    {
+        return $this->hasMany(Varietat::class)->orderBy('name','asc');
+    }
 }

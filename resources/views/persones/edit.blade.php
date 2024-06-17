@@ -11,7 +11,7 @@
             
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-3">
        
-                <div class="mt-2 pb-2">
+                <!-- <div class="mt-2 pb-2">
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <strong>Eps!</strong> Hi ha hagut els següents errors:<br/><br/>
@@ -22,14 +22,14 @@
                         </ul>
                     </div>
                 @endif
-               </div>
+               </div> -->
 
                <div class="row g-5">
                     <div class="col-md-5 col-lg-4 order-md-last">
                         <!-- ///////////////////////////////////////////////// Barra lateral dreta /// -->
-                        <h2>Mòdul lateral info</h2>
+                        <h2>Informació:</h2>
+                        <label class="obligat mb-4" style="break-after: right;">Els camps marcats són obligatoris</label>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum egestas arcu faucibus venenatis. Vivamus vitae vulputate eros.</p>
-
 
 
                         <!-- ///////////////////////////////////////////////// FI - Barra lateral dreta /// -->
@@ -45,38 +45,44 @@
                               <div class="row gx-3 mb-4">
 
                                 <div class="col-4 ">
-                                  <label for="name" class="form-label">Nom:</label>
-                                  <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{$persone->name}}" required>
+                                  <label for="name" class="form-label obligat">Nom:</label>
+                                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="" value="{{$persone->name}}" >
+                                  @error('name')
+                                          <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                 </div>
 
                                 <div class="col-4 ">
                                   <label for="perCognoms" class="form-label">Cognoms:</label>
-                                  <input type="text" class="form-control" id="perCognoms" name="perCognoms" placeholder="" value="{{$persone->perCognoms}}" required>
+                                  <input type="text" class="form-control" id="perCognoms" name="perCognoms" placeholder="" value="{{$persone->perCognoms}}" >
                                 </div>
 
                                 <div class="col-4 ">
                                   <label for="perVinculacio" class="form-label">Vinculacio:</label>
-                                  <input type="text" class="form-control" id="perVinculacio" name="perVinculacio" placeholder="" value="{{$persone->perVinculacio}}" required>
+                                  <input type="text" class="form-control" id="perVinculacio" name="perVinculacio" placeholder="" value="{{$persone->perVinculacio}}" >
                                 </div>
                             </div>
                             <div class="row gx-3 mb-4">
 
                                 <div class="col-6 ">
                                   <label for="perOrganitzacio" class="form-label">Organització:</label>
-                                  <input type="text" class="form-control" id="perOrganitzacio" name="perOrganitzacio" placeholder="" value="{{$persone->perOrganitzacio}}" required>
+                                  <input type="text" class="form-control" id="perOrganitzacio" name="perOrganitzacio" placeholder="" value="{{$persone->perOrganitzacio}}" >
                                 </div>
                                 <div class="col-2 ">
                                   <label for="perTelefon" class="form-label">Telefon:</label>
-                                  <input type="text" class="form-control" id="perTelefon" name="perTelefon" placeholder="" value="{{$persone->perTelefon}}" required>
+                                  <input type="text" class="form-control" id="perTelefon" name="perTelefon" placeholder="" value="{{$persone->perTelefon}}" >
                                 </div>
                                 <div class="col-4 ">
                                   <label for="perEmail" class="form-label">Email:</label>
-                                  <input type="text" class="form-control" id="perEmail" name="perEmail" placeholder="" value="{{$persone->perEmail}}" required>
+                                  <input type="text" class="form-control" id="perEmail" name="perEmail" placeholder="" value="{{$persone->perEmail}}" >
+                                  @error('perEmail')
+                                          <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                 </div>
                             </div>
                             <div class="row gx-3 mb-4">
                                 <div class="col-6 ">
-                                 <label for="municipi_id" class="form-label">Municipi:</label>
+                                 <label for="municipi_id" class="form-label obligat">Municipi:</label>
                                   <select class="form-select" id="municipi_id" name="municipi_id">
                                     <option value="0">...</option>
                                      @foreach ($municipis as $municipi)
@@ -86,14 +92,14 @@
                                 </div>
                                 <div class="col-2 ">
                                   <label for="perCP" class="form-label">CP:</label>
-                                  <input type="text" class="form-control" id="perCP" name="perCP" placeholder="" value="{{$persone->perCP}}" required>
+                                  <input type="text" class="form-control" id="perCP" name="perCP" placeholder="" value="{{$persone->perCP}}" >
                                 </div>
                             </div>
                             <div class="row gx-3 mb-4">
 
                                 <div class="col-sm-12">
                                   <label for="perObservacions"class="form-label">Descripció:</label>
-                                  <textarea class="form-control" id="perObservacions" name="perObservacions" placeholder="" required cols="50" rows="10">{{$persone->perObservacions}}</textarea>
+                                  <textarea class="form-control" id="perObservacions" name="perObservacions" placeholder=""  cols="50" rows="10">{{$persone->perObservacions}}</textarea>
                                 </div>
 
 

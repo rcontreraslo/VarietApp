@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Municipi;
 use App\Models\Provincie;
+use App\Http\Requests\MunicipiRequest;
 
 class MunicipiController extends Controller
 {
@@ -40,7 +41,7 @@ public function create()
     }
     
 /*****************************STORE********************************************/
- public function store(Request $request)
+ public function store(MunicipiRequest $request)
     {
         //
         Municipi::create($request->all());
@@ -49,7 +50,7 @@ public function create()
                         ->with('success','Municipi creat amb èxit!');
     }
 
-/****************************MUNICIPI***********************************************/
+/****************************SHOW***********************************************/
 public function show(Municipi $municipi)
     {
         //
@@ -66,7 +67,7 @@ public function edit(Municipi $municipi)
     }
 
 /********************************UPDATE**********************************************/
-    public function update(Request $request, Municipi $municipi)
+    public function update(MunicipiRequest $request, Municipi $municipi)
     {
         //
         $municipi->update($request->all());

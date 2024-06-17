@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Familie;
 use App\Models\Especie;
+use App\Http\Requests\EspecieRequest;
+
 
 class EspecieController extends Controller
 {
@@ -40,7 +42,7 @@ class EspecieController extends Controller
 
  /*************************************STORE*********************************************/ 
     
-    public function store(Request $request)
+    public function store(EspecieRequest $request)
     {
         //
         $request->validate([
@@ -71,7 +73,7 @@ class EspecieController extends Controller
 
 /*************************************UPDATE********************************/
 
-    public function update(Request $request, Especie $especy)
+    public function update(EspecieRequest $request, Especie $especy)
     {
         //
         /*$request->validate([
@@ -82,6 +84,16 @@ class EspecieController extends Controller
       
         return redirect()->route('especies.index')
                         ->with('success','Espècie modificada amb èxit!');
+    }
+/*************************DESTROY********************************************/
+    
+    public function destroy(Especie $especy)
+    {
+        //
+        $especy->delete();
+       
+        return redirect()->route('especies.index')
+                        ->with('success','Espècie eliminada!');
     }
 
  /************************************RESTORE************************************************/

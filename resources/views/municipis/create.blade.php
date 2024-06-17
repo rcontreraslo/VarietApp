@@ -11,25 +11,14 @@
             
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-3">
        
-                <div class="mt-2 pb-2">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <strong>Eps!</strong> Hi ha hagut els següents errors:<br/><br/>
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-               </div>
+              
 
                <div class="row g-5">
                     <div class="col-md-5 col-lg-4 order-md-last">
                         <!-- ///////////////////////////////////////////////// Barra lateral dreta /// -->
-                        <h2>Mòdul lateral info</h2>
+                        <h2>Informació:</h2>
+                        <label class="obligat mb-4" style="break-after: right;">Els camps marcats són obligatoris</label>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum egestas arcu faucibus venenatis. Vivamus vitae vulputate eros.</p>
-
 
 
                         <!-- ///////////////////////////////////////////////// FI - Barra lateral dreta /// -->
@@ -44,34 +33,47 @@
                               <div class="row gx-3">
 
                                 <div class="col-3 ">
-                                  <label for="name" class="form-label">Nom</label>
-                                  <input type="text" class="form-control" id="name" name="name" placeholder="" value="" required>
+                                  <label for="name" class="form-label obligat">Nom</label>
+                                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="" value="{{ old('name') }}" >
+                                            @error('name')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                 </div>
 
-                                <div class="col-3 ">
-                                     <label for="munIlla" class="form-label">Illa</label>
-                                      <select class="form-select" id="munIlla" name="munIlla" placeholder="Selecciona Illa" value="" required>
-                                      <option disabled selected>Selecciona illa</option>
-                                      <option value="Mallorca">Mallorca</option>
-                                        <option value="Menorca">Menorca</option>
-                                        <option value="Formentera">Formentera</option>
-                                        <option value="Eivissa">Eivissa</option>             
-                                    </select>
+                               <div class="col-3">
+                                            <label for="munIlla" class="form-label">Illa</label>
+                                            <select class="form-select" id="munIlla" name="munIlla">
+                                                <option disabled selected>Selecciona illa</option>
+                                                <option @if(old('munIlla')=='Mallorca') selected @endif value="Mallorca">Mallorca</option>
+                                                <option @if(old('munIlla')=='Menorca') selected @endif value="Menorca">Menorca</option>
+                                                <option @if(old('munIlla')=='Formentera') selected @endif value="Formentera">Formentera</option>
+                                                <option @if(old('munIlla')=='Eivissa') selected @endif value="Eivissa">Eivissa</option>
+                                            </select>
+                                            @error('munIlla')
+                                              <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                 </div>
+                                
 
                                 <div class="col-3 ">
-                                  <label for="provincie_id" class="form-label">Provincia</label>
-                                  <select class="form-select" id="provincie_id" name="provincie_id">
+                                  <label for="provincie_id" class="form-label obligat">Provincia</label>
+                                  <select class="form-select @error('provincie_id') is-invalid @enderror" id="provincie_id" name="provincie_id">
                                     <option disabled selected>Selecciona provincia</option>
                                      @foreach ($provincies as $provincie)
-                                       <option value="{{ $provincie->id }}">{{$provincie->name}}</option>
+                                       <option value="{{ $provincie->id }}" @if(old('provincie_id')==$provincie->id) selected @endif >{{ $provincie->name }}
                                      @endforeach
                                   </select>
+                                  @error('provincie_id')
+                                    <span class="text-danger">{{ $message }}</span>
+                                  @enderror
                                 </div>
 
                                 <div class="col-3 ">
-                                  <label for="munPais" class="form-label">Pais</label>
-                                  <input type="text" class="form-control" id="munPais" name="munPais" placeholder="" value="" required>
+                                  <label for="munPais" class="form-label obligat">Pais</label>
+                                  <input type="text" class="form-control @error('munPais') is-invalid @enderror" id="munPais" name="munPais" placeholder="" value="{{ old('munPais') }}" >
+                                  @error('name')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                 </div>
 
                               </div>

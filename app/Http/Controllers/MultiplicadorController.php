@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Multiplicador;
 use App\Models\Municipi;
+use App\Http\Requests\MultiplicadorRequest;
 
 class MultiplicadorController extends Controller
 {
@@ -42,7 +43,7 @@ class MultiplicadorController extends Controller
 
 /*************************************STORE****************************************/
     
-    public function store(Request $request)
+    public function store(MultiplicadorRequest $request)
     {
         Multiplicador::create($request->all());
        
@@ -67,7 +68,7 @@ class MultiplicadorController extends Controller
 
 /****************************************UPDATE***********************************/
     
-    public function update(Request $request, Multiplicador $multiplicador)
+    public function update(MultiplicadorRequest $request, Multiplicador $multiplicador)
     {
         $multiplicador->update($request->all());
       

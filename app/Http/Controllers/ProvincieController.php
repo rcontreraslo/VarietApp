@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Provincie;
+use App\Http\Requests\ProvincieRequest;
 
 class ProvincieController extends Controller
 {
@@ -37,7 +38,7 @@ class ProvincieController extends Controller
 
 /**************************************STORE*********************************************/
     
-    public function store(Request $request)
+    public function store(ProvincieRequest $request)
     {
         //
         Provincie::create($request->all());
@@ -64,7 +65,7 @@ class ProvincieController extends Controller
 
 /***********************************UPDATE********************************************************/    
     
-    public function update(Request $request, Provincie $provincy)
+    public function update(ProvincieRequest $request, Provincie $provincy)
     {
         //
         $provincy->update($request->all());

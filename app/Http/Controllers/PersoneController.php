@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorepersoneRequest;
+use App\Http\Requests\PersoneRequest;
 use App\Models\Persone;
 use App\Models\Municipi;
 use Illuminate\Http\Request;
@@ -42,7 +42,7 @@ class PersoneController extends Controller
 
 /*************************************STORE****************************************/
     
-    public function store(StorepersoneRequest $request)
+    public function store(PersoneRequest $request)
     {
         Persone::create($request->all());
        
@@ -67,7 +67,7 @@ class PersoneController extends Controller
 
 /****************************************UPDATE***********************************/
     
-    public function update(Request $request, Persone $persone)
+    public function update(PersoneRequest $request, Persone $persone)
     {
         $persone->update($request->all());
       

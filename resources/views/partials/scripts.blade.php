@@ -1,6 +1,20 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+
+         /*/ / / SUMMERNOTE editor de text  / / /
+            $('.summernote').summernote({
+                toolbar: [
+                  ['font', ['bold', 'underline', 'clear']],
+                  ['para', ['ul', 'ol']],
+                  ['view', ['codeview']],
+                ],
+            });
+*/
+            /*/ / / cercador a selects select2 / / /*/
+            $('.form-select').select2({
+                    theme: 'bootstrap-5'
+                });
 		
         /*/////////////////////////////////////////    SCRIPTS DATATABLES ///////////////////////////////////*/	
             // datatable de varietats
@@ -234,7 +248,7 @@
                 dom: 'lBfirtp',
                 buttons: [
                     { extend: 'excel',
-                     title: 'Mostres'
+                     title: 'Lots'
                     }
                 ],
                 lengthMenu: [
@@ -247,12 +261,11 @@
                 order: [[0, 'desc']],
                 processing: true,
                 serverSide: true,
-                ajax: '/mostres',
+                ajax: '/lots',
                 columns: [
                     { data: 'id', name: 'id', 'visible': false},
-                    { data: 'mostre_id', name: 'mostre_id' },
-                    { data: 'varietat.name', name: 'varietat.name' },
-                    { data: 'especie.name', name: 'especie.name' },
+                    { data: 'mostre.name', name: 'mostre.name' },
+                    { data: 'mostre.varietat.name', name: 'mostre.varietat.name' },
                     { data: 'lotCodi', name: 'lotCodi' },
                     { data: 'actions', name: 'actions', orderable: false},
                  ],
@@ -263,7 +276,7 @@
                 dom: 'lBfirtp',
                 buttons: [
                     { extend: 'excel',
-                     title: 'Mostres'
+                     title: 'Packs'
                     }
                 ],
                 lengthMenu: [
@@ -276,12 +289,11 @@
                 order: [[0, 'desc']],
                 processing: true,
                 serverSide: true,
-                ajax: '/mostres',
+                ajax: '/packs',
                 columns: [
                     { data: 'id', name: 'id', 'visible': false},
                     { data: 'lot.name', name: 'lot.name' },
-                    { data: 'varietat.name', name: 'varietat.name' },
-                    { data: 'especie.name', name: 'especie.name' },
+                    { data: 'lot.varietat.name', name: 'lot.varietat.name' },
                     { data: 'packCodi', name: 'packCodi' },
                     { data: 'actions', name: 'actions', orderable: false},
                  ],

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Familie;
+use App\Http\Requests\FamilieRequest;
 
 class FamilieController extends Controller
 {
@@ -36,7 +37,7 @@ class FamilieController extends Controller
         return view('families.create');
     }
 
-    public function store(Request $request)
+    public function store(FamilieRequest $request)
     {
         //
         Familie::create($request->all());
@@ -57,7 +58,7 @@ class FamilieController extends Controller
         return view('families.edit',compact('family'));
     }
 
-    public function update(Request $request, Familie $family)
+    public function update(FamilieRequest $request, Familie $family)
     {
         //
         $family->update($request->all());
