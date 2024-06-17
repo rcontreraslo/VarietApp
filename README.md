@@ -17,8 +17,12 @@ Clona el repositori del projecte des de GitHub al teu directori local:
 git clone https://github.com/rcontreraslo/VarietApp.git
 
 ```
+Accedeix al directori de la aplicació:
+```
 
-cd project-name
+cd Varietapp
+
+```
 ### **2. Instal·lar Dependències**
 Executa el següent comandament per instal·lar totes les dependències PHP necessàries:
 ```
@@ -27,6 +31,12 @@ composer install
 
 ```
 ### **3. Configurar l'Entorn**
+Duplica el fitxer .env.example i desa'l amb el nom .env:
+```
+
+cp .env.example .env
+
+```
 Obre el fitxer .env amb un editor de text i actualitza les següents línies per configurar la connexió a la base de dades:
 ```
 
